@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    </head>
+    <script>
+    $(document).ready(function(){
+       $("#calculate").click(function(){
+            var number1=$("#number1").val();
+            var text="";
+            var mod = number1 % 32;
+            while(number1!=0){
+                
+                mod = number1 % 32;
+                
+                if ( mod < 10)
+                    text += mod ;
+
+                if ( mod >= 10){     
+                    mod = (mod-10)+65;
+                    text += String.fromCharCode(mod) ;   
+                }
+                number1 = Math.floor(number1/32);
+            }
+            $("#solution").text(text.split("").reverse().join(""));
+                //parsing, reversing and then unparsing...
+           
+       });
+    });
+    </script>
+    
+    <body>
+    
+    <div class="container">
+        <div class="text-center col-md-6 offset-md-3">
+            
+            <form class="form-group">
+                <p class="text-center">Your Number:</p>
+                <input type="number" class="form-control" id="number1">              
+            </form>
+            
+            <button class="text-center col-4 btn btn-warning" id="calculate">Convert</button>
+            <p class="text-center" style="margin-top:15px">32-wise System Relative:</p>
+            <textarea class="form-control" type="text" id="solution"></textarea>
+            
+        </div>     
+    </div>
+    
+    </body>
+</html>

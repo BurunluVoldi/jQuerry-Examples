@@ -1,0 +1,70 @@
+<html>
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <title>Filter through...</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+           $("#input").on("keyup", function(){
+             var value = $(this).val().toLowerCase();
+               $("#table tr").filter(function(){
+                  $(this).toggle( $(this).text().toLowerCase().indexOf(value) > -1  );  
+               });
+           });
+        });
+    </script>
+    
+    </head>
+    
+    <body>
+    
+    <div class="container">
+        
+        <div class="col-md-12 text-center">
+            <h2>Filterable Table is at your service</h2>
+            <p>Type something to filter through the table that shown below...</p>
+            <input type="text" placeholder="Search" id="input">
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12 text-center" style="margin: 15px">
+        
+                <table class="table table-striped text-center" style=" border: 1px solid; border-top: 2px solid">
+                <thead>
+                    <tr>
+                    <th>NAME</th>
+                    <th>SURNAME</th>
+                    <th>EMAIL</th>
+                    </tr>
+                    </thead>
+                <tbody id="table">
+                    <tr>
+                    <td>Enes</td>
+                    <td>Kılıçarslan</td>
+                    <td>enes.kilicarslan@yandex.com</td>
+                    </tr>
+                    
+                    <tr>
+                    <td>Ender</td>
+                    <td>Arslan</td>
+                    <td>enderarslan123@gmail.com</td>
+                    </tr>
+                    
+                    <tr>
+                    <td>Emre</td>
+                    <td>Alık</td>
+                    <td>alikemre@outlook.com</td>
+                    </tr>
+                    
+                    </tbody>  
+                </table>
+            </div>
+        </div>
+        
+        </div>    
+    
+    </body>
+
+</html>
