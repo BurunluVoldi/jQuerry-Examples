@@ -1,0 +1,89 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script>
+    $(document).ready(function(){
+        
+        $("#hdabove").click(function(){
+            $("#above").hide(450);
+            $("#hdabove").hide(450);
+        });
+        
+        $("#hdbelow").click(function(){
+            $("#below").hide(450);
+            $("#hdbelow").hide(450);
+        });
+        
+        $("#horn").on({
+            mouseenter: function(){
+                $("#above").css("color","blue")
+                $("#above").css("background-color", "red")
+                $("#below").css("color","red")
+                $("#below").css("background-color", "blue")
+            },
+            mouseleave: function(){
+                $("#above").css("color","red")
+                $("#above").css("background-color", "blue")
+                $("#below").css("color","blue")
+                $("#below").css("background-color", "red")
+            },
+            mousedown: function(){
+                $("p").toggle(450);
+            }
+            
+        });
+        
+        
+    });
+    </script>
+    
+    
+    <title>jquery_test</title>
+    </head>
+    
+    <body>
+    <div class="container">
+        
+        <div class="col">
+        <p class="text-center" id="above">
+            click the button below to hide me!
+            </p>
+        </div>
+    
+        </div>
+        
+    <div class="container">
+        
+        <div class="col text-center">
+        <button class="btn btn-danger" id="hdabove">Click!</button>
+        </div> 
+             </div>
+        
+    <div class="container">
+        
+        <div class="col text-center">
+        <button class="btn btn-warning" id="hdbelow">Click!</button>
+        </div> 
+             </div>
+        
+    <div class="container">
+        
+        <div class="col">
+        <p class="text-center" id="below">
+            click the button above to hide me!
+            </p>
+        </div>
+        </div>
+            
+    <div class="container">
+        
+        <div class="col text-center">
+        <button class="btn btn-primary" id="horn">KORNA</button>
+        </div> 
+             </div>
+    
+    </body>
+</html>
